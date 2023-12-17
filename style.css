@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  #lienzoContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+  }
+  #pizarra {
+	border: 3px solid #000;
+  }
+  .controles {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+  }
+  input[type="color"],
+  input[type="range"] {
+	width: 150px;
+  }
+  .grosor-wrapper {
+	display: flex;
+	align-items: center;
+  }
+  .grosor-label {
+	margin-right: 10px;
+  }
