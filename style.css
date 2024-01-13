@@ -4,7 +4,7 @@ body {
 	justify-content: center;
 	align-items: center;
   }
-
+  
   #lienzoContainer {
 	display: flex;
 	flex-direction: column;
@@ -12,9 +12,12 @@ body {
 	justify-content: center;
 	height: 80vh;
   }
+  
   #pizarra {
 	border: 3px solid #000;
+	max-width: 100%; /* La pizarra ocupará el 100% del ancho disponible */
   }
+  
   .controles {
 	margin-top: 10px;
 	display: flex;
@@ -22,14 +25,18 @@ body {
 	justify-content: center;
 	gap: 10px;
   }
+  
   input[type="color"],
   input[type="range"] {
-	width: 150px;
+	width: 100%; /* Los controles ocuparán el 100% del ancho disponible */
   }
+  
   .grosor-wrapper {
 	display: flex;
 	align-items: center;
   }
+  
   .grosor-label {
 	margin-right: 10px;
   }
+  

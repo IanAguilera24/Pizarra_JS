@@ -1,35 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Pizarra</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizarra Multipágina</title>
   <link rel="stylesheet" href="style.css">
-
   <script src="whiteboard.js"></script>
 </head>
 <body>
-
   <div id="lienzoContainer">
     <canvas id="pizarra" width="1800" height="1000"></canvas>
 
     <div class="controles">
-      <button onclick="activarLapiz()">Seleccionar lápiz</button>
-      <button onclick="activarGomaDeBorrar()">Activar goma de borrar</button>
-      <button onclick="restablecerPizarra()">Restablecer pizarra</button>
-
+      <button onclick="activarLapiz()">Lápiz</button>
+      
       <div class="color-picker">
         <input type="color" id="colorPicker" onchange="cambiarColorLapiz(this.value)">
-        <label for="colorPicker">Color del lápiz</label>
+        <label for="colorPicker">Color</label>
       </div>
 
       <div class="grosor-wrapper">
-        <label for="grosor" class="grosor-label">Grosor del lápiz:</label>
+        <label for="grosor" class="grosor-label">Grosor:</label>
         <input type="range" min="1" max="20" value="5" id="grosor" onchange="cambiarGrosor(this.value)">
         <span id="grosorValor">5</span>
       </div>
+
+      <button onclick="activarGomaDeBorrar()">Goma de borrar</button>
+      <button onclick="restablecerPizarra()">Restablecer</button>
       
-      <button onclick="capturarPizarra()">Capturar pizarra</button>
+      <!-- Nuevos botones para navegación de páginas -->
+      <button onclick="navegarPagina(-1)"><</button>
+
+      <button onclick="crearNuevaPagina()">+</button>
+
+      <button onclick="navegarPagina(1)">></button>
+
+      <select id="selectorPaginas" onchange="cambiarPagina()">
+        <!-- Las opciones se llenarán dinámicamente con JavaScript -->
+      </select>
+
+      <button onclick="eliminarPagina()">Eliminar</button>
+
+      <!-- Agrega este botón a tus controles existentes -->
+      <button onclick="copiarComoImagen()">Copiar</button>
+      <button onclick="capturarPizarra()">Descargar</button>
     </div>
+
+    
   </div>
-  
-  </body>
+</body>
 </html>
